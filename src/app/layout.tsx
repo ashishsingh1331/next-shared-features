@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 
 import "./globals.css";
 import { inter } from "./font";
+import Script from "next/script";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -15,7 +16,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        {children}
+        <Script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js" />
+      </body>
     </html>
   );
 }
